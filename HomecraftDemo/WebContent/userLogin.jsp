@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Login</title>
-	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="css/bootstrap-theme.min.css" type="text/css">
@@ -16,11 +16,28 @@
 	<script src="js/respond.min.js"></script>
 	<style>
 		body{
+			
 			padding-top: 40px;
 		}
+		
+		html, body
+			{
+			    width: 100%;
+			    height: 100%;
+			}
+			body
+			{
+			   
+			 	
+			    width: 100%;
+			    height: 100%;
+			    background-attachment: fixed;
+			}
+		
 	</style>
 </head>
 <body>
+	<div id="wrapper" style="height:100%;  background-image: url('img/bg.jpg');" >
 	<nav class="navbar navbar-inverse navbar-fixed-top" id="my-navbar">
          <div class="container">
             <div class="navbar-header">
@@ -42,44 +59,37 @@
             </div>
     </nav><!-- Navbar end-->
          
-    <div class="jumbotron">
-        <div class="container text-center">
-            <h1>User Login</h1>
-            <h3>Your home service is just few clicks away..
-                Login now or Sign Up for Free</h3>
-        </div>
-    </div><!--end Jumbotron-->
+    
          
     <div class="container">
         <section>
-             <div class="page-header" id="contact">
-                    <h4>login.<small>Contact us for more</small></h4>
-             </div><!--end page header-->
-            <div class="row">
-                    <div class="col-md-2">
+            
+            <div class="row" style="padding-top:90px	">
+            	
+                    <div class="col-xs-3">
                         
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-xs-6" style="padding-top:40px; padding-bottom:50px ;background-color:#FBF7F7; border-radius:20px" >
                         <form action="LoginServlet" class="form-horizontal" role="form" method="post" data-toggle="validator">
                             <div class="form-group">
-                                <label for="email" class="col-lg-2 control-label">
+                                <label for="email" class="col-xs-2 control-label">
                                     Email
                                 </label>
-                                <div class="col-lg-10">
+                                <div class="col-xs-8">
                                     <input type="text" class="form-control" name="email" id="email" placeholder="Enter your email" required>
                                 </div>
                             </div><!--end form group-->
                             <div class="form-group">
-                                <label for="password" class="col-lg-2 control-label">
+                                <label for="password" class="col-xs-2 control-label">
                                     password
                                 </label>
-                                <div class="col-lg-10">
+                                <div class="col-xs-8">
                                     <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password" required>
                                 </div>
                             </div><!--end form group-->
                              <div class="form-group">
-                            <div class="col-lg-10 col-lg-offset-5">
-                                <input type="submit" class="btn btn-lg btn-primary" name="login" value="login">
+                            <div class="col-xs-8 col-xs-offset-2">
+                                <input type="submit" class="btn btn-block btn-primary" name="login" value="login">
                             </div>
                             
                         </div>
@@ -104,6 +114,7 @@
                 <p>&copy; Copyright @ 2016</p>
             </div>
         </footer>
+       </div>
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </body>

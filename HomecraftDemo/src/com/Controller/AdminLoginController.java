@@ -54,14 +54,19 @@ public class AdminLoginController extends HttpServlet {
 			int i=0;
 			
 			 try {
-				i = LoginDao.getAdmin(model);
+				AdminModel model1 = LoginDao.getAdmin(model);
 				
 				System.out.println(i);
-				if(i==1)
+				if(!(model1.getFname().isEmpty()))
 				 {
+					String name = model1.getFname();
+					String admin = "admin";
 					 session = request.getSession();
-					 session.setAttribute("userEmail",email);
-					 response.sendRedirect("admindashboard.jsp");
+					 //session.setAttribute("userEmail",email);
+					 session.setAttribute("name", name);
+					 session.setAttribute("admin", admin);
+					 //response.sendRedirect("admindashboard.jsp");
+					 request.getRequestDispatcher("adminPanel.jsp").forward(request, response);;
 					 
 				 }
 				else

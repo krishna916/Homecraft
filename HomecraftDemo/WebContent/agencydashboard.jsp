@@ -14,7 +14,9 @@
 	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">-->
 	
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-
+	<link rel="stylesheet" href="css/agencySide.css" type="text/css">
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="css/bootstrap-theme.min.css" type="text/css">
 
@@ -25,38 +27,86 @@
     
 
 </head>
-<body style="padding-top:40px">
-     <nav class="navbar navbar-inverse navbar-fixed-top" id="my-navbar">
-         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-				<a href="" class="navbar-brand">HomeCraft</a>
-            </div><!-- Navbar Header-->
-             <div class="collapse navbar-collapse" id="navbar-collapse">
-                 
-                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="" >Login</a></li>
-                    <li><a href="" >Register</a></li>
-                    <li><a href="#contactUs">Contact Us</a></li>
-                    <li>
-                        <form action="LogoutController" method="post" class="form-inline">
-                        <input type="submit" name="logout"  value="Logout" class="btn navbar-btn btn-primary">
-                        </form>
-                     </li>
-                 </ul>
-             </div>
-        </div>
-    </nav><!-- Navbar end-->
-    <div class="jumbotron">
-        <div class="container ">
-            <h1>Login Success</h1>
+<body style="padding-top:50px">
+      <div id="wrapper">
+        <div class="container-fluid">
+                <nav class="navbar navbar-inverse navbar-fixed-top" id="my-navbar" style="border:1px solid #222">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+				            <a href="" id="brand" class="navbar-brand">HomeCraft</a>
+                        </div><!-- Navbar Header-->
+                        <div class="collapse navbar-collapse" id="navbar-collapse">
+                            <ul class="nav navbar-nav navbar-left">
+                                <li><a href="#menu-toggle"  class="btn" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger"></span></a></li>
+                                    
+                            </ul>
+
+                             <ul class="nav navbar-nav navbar-right">
+                               <div class="btn-group">
+                                <li class="dropdown">
+                                    <button type="button" class="btn btn-primary navbar-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="
+                                            glyphicon glyphicon-user"></span>&nbsp;User <span class="caret"></span>
+                                      </button>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                                         </li>
+                                        <li>
+                                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="/HomecraftDemo/adminLogout"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                 </div>
+                             </ul>
+                        </div>
+                    </div>
+                </nav><!-- Navbar end-->
+            </div>
             
+            
+              <!--Sidebar-->
+        <div id="sidebar-wrapper" class="sidebar" style="background-color: #222;">
+             <ul class="sidebar-nav ">
+                <li>
+                    <a href="agnecydashboard.jsp" class="">Dashboard</a>
+                </li>
+                <li>
+                    <a href="AddServices.jsp" class="">Add Services</a>
+                </li>
+                <li>
+                    <a href="agencyServiceRequests.html">Service Requests</a>
+                </li>
+                <li>
+                    <a href="#">Overview</a>
+                </li>
+                <li>
+                    <a href="#">Events</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
         </div>
-    </div><!--end Jumbotron-->
+        <!--Sidebar end-->
     
      <!--footer-->
         <footer>
@@ -71,8 +121,29 @@
                 <p>&copy; Copyright @ 2016</p>
             </div>
         </footer>
-    
+    <!-- jQuery -->
     <script src="js/jquery-2.1.4.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+        
+               jQuery(function ($) {
+            //form submit handler
+            $('#addServices').submit(function (e) {
+                //check atleat 1 checkbox is checked
+                if (!$('.service').is(':checked')) {
+                    //prevent the default form submit if it is not checked
+                    e.preventDefault();
+                }
+            })
+        })
+    </script>
 </body>
 </html>

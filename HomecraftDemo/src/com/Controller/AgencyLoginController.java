@@ -13,6 +13,8 @@ import javax.servlet.http.HttpSession;
 import com.Dao.LoginDao;
 import com.Model.AgencyRegModel;
 
+import methods.Hashing;
+
 /**
  * Servlet implementation class AgencyLoginController
  */
@@ -46,10 +48,10 @@ public class AgencyLoginController extends HttpServlet {
 			HttpSession session = null;
 			String email = request.getParameter("email");
 			String password = request.getParameter("password");
-			
+			String ePassword = Hashing.encrypt(password);
 			AgencyRegModel model = new AgencyRegModel();
 			model.setEmail(email);
-			model.setPassword(password);
+			model.setPassword(ePassword);
 			
 			int i=0;
 			

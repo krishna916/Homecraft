@@ -12,6 +12,9 @@ import javax.servlet.http.HttpSession;
 
 import com.Dao.RegDao;
 import com.Model.AgencyRegModel;
+import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
+
+import methods.Hashing;
 
 /**
  * Servlet implementation class AgencyRegController
@@ -37,6 +40,8 @@ public class AgencyRegController extends HttpServlet {
 	}
 
 	/**
+	 * @throws IOException 
+	 * @throws ServletException 
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -52,12 +57,14 @@ public class AgencyRegController extends HttpServlet {
 			String country = request.getParameter("country");
 			String state = request.getParameter("state");
 			String city = request.getParameter("city");
-			HttpSession session = null;
+			//HttpSession session = null;
+			
+			String ePassword = Hashing.encrypt(password);
 			AgencyRegModel model = new AgencyRegModel();
 			
 			model.setAgencyName(agencyName);
 			model.setEmail(email);
-			model.setPassword(password);
+			model.setPassword(ePassword);
 			model.setAddress(address);
 			model.setMobile(mobile);
 			model.setCountry(country);
@@ -72,11 +79,26 @@ public class AgencyRegController extends HttpServlet {
 				System.out.println(i);
 				if(i!=0)
 				{
-					session  = request.getSession();
-					session.setAttribute("userEmail", email);
-					response.sendRedirect("agencydashboard.jsp");
+					//session  = request.getSession();
+					//session.setAttribute("userEmail", email);
+					//response.sendRedirect("agencydashboard.jsp");
+					request.getRequestDispatcher("AgencyRegSuccess.jsp").forward(request, response);
 				}
-			} catch (ClassNotFoundException | SQLException e) {
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (ServletException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (MySQLIntegrityConstraintViolationException e) {
+				
+				String s = "duplicate";
+				request.setAttribute("duplicate", s);
+				request.getRequestDispatcher("agencyRegistration.jsp").forward(request, response);
+			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}

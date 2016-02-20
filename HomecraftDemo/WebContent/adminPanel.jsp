@@ -4,8 +4,15 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-
+<title>Admin Dashboard</title>
+<% 
+String user=(String)session.getAttribute("name");
+	String admin=(String)session.getAttribute("admin");
+	if(admin != "admin")
+	{
+		response.sendRedirect("index.jsp");
+	}
+%>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
@@ -35,7 +42,7 @@
 
                              <ul class="nav navbar-nav navbar-right">
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>&nbsp; <%out.println(user); %><b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li>
                                             <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
@@ -104,7 +111,7 @@
                 </div>
                 <!-- /.row -->
                 <div class="row">
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-md-3 col-md-6">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <div class="row">
@@ -126,7 +133,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-md-3 col-md-6">
                         <div class="panel panel-green">
                             <div class="panel-heading">
                                 <div class="row">
@@ -148,7 +155,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-md-3 col-md-6">
                         <div class="panel panel-yellow">
                             <div class="panel-heading">
                                 <div class="row">
@@ -170,7 +177,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-md-3 col-md-6">
                         <div class="panel panel-red">
                             <div class="panel-heading">
                                 <div class="row">

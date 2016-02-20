@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Agency Registrations</title>
+<link rel="icon" type="image/x-icon" href="ico/favicon.ico">
 	<meta name="description" content="Hello World">
 	<!-- Latest compiled and minified CSS -->
 	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -19,6 +20,9 @@
 
 
 	<!-- Js Links -->
+	<script type="text/javascript">
+		
+	</script>
 	<script src="js/html5shiv.min.js"></script>
 	<script src="js/respond.min.js"></script>
     <script>
@@ -37,7 +41,7 @@
         }
     </script>
 </head>
-<body style="padding-top:40px;">
+<body style="padding-top:40px;" onload="getCountry()">
 	<nav class="navbar navbar-inverse navbar-fixed-top" id="my-navbar">
          <div class="container">
             <div class="navbar-header">
@@ -46,7 +50,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-				<a href="index.html" class="navbar-brand">HomeCraft</a>
+				<a href="index.jsp" class="navbar-brand">HomeCraft</a>
             </div><!-- Navbar Header-->
              <div class="collapse navbar-collapse" id="navbar-collapse">
                  
@@ -74,92 +78,85 @@
                     <h4>Fill this form.<small>Contact us for more</small></h4>
                 </div><!--end page header-->
                 <div class="row">
+                <%String s = (String)request.getAttribute("duplicate");
+                	if(s=="duplicate")
+                	{
+                %>
+                <div class="alert alert-danger">
+            	<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            		<strong>Email Already Registered </strong>
+            	</div>
+            	<%} %>
                     <div class="col-md-2">
                     </div>
                     <div class="col-md-8">
+                    <div class="row">
                         <form action="AgencyRegController" class="form-horizontal" role="form" method="post" data-toggle="validator">
                             <div class="form-group">
-                                <label for="agencyName" class="col-lg-2 control-label">
-                                    Agency Name
+                                <label for="agencyName" class="col-md-2 control-label">Agency Name
                                 </label>
-                                <div class="col-lg-10">
-                                    <input type="text" class="form-control" name="agencyName" id="agencyName" placeholder="Enter your Agency Name" required>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" pattern="[A-Za-z]+" name="agencyName" id="agencyName" placeholder="Enter your Agency Name" required>
                                 </div>
                             </div><!--end form group-->
                             <div class="form-group">
-                                <label for="email" class="col-lg-2 control-label">
+                                <label for="email" class="col-md-2 control-label">
                                     Email
                                 </label>
-                                <div class="col-lg-10">
-                                    <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email" required>
+                                <div class="col-md-10">
+                                    <input type="email" class="form-control" name="email" id="email"  placeholder="Enter your email" required>
                                 </div>
                             </div><!--end form group-->
                             <div class="form-group">
-                                <label for="password" class="col-lg-2 control-label">
+                                <label for="password" class="col-md-2 control-label">
                                     Password
                                 </label>
-                                <div class="col-lg-10">
-                                    <input type="password" data-minlength="6" name="password" class="form-control" id="password" placeholder="Enter your Password" required>
-                                    <span class="help-block">Minimum of 6 characters</span>
+                                <div class="col-md-10">
+                                    <input type="password" data-minlength="" name="password" pattern=".{8,}" class="form-control" id="password" placeholder="Enter your Password" required>
+                                     <span class="help-block">At least 8 or more characters</span>
                                 </div>
                             </div><!--end form group-->
                              <div class="form-group">
-                                <label for="confirm-password" class="col-lg-2 control-label">
+                                <label for="confirm-password" class="col-md-2 control-label">
                                     Confirm 
                                 </label>
-                                <div class="col-lg-10">
+                                <div class="col-md-10">
                                     <input type="password"  class="form-control" id="confirm-password" data-match="#password" data-match-error="Whoops, these don't match" placeholder="Confirm Password" required>
                                 </div>
                             </div><!--end form group-->
                             <div class="form-group">
-                            <label for="address" class="col-lg-2 control-label">
+                            <label for="address" class="col-md-2 control-label">
                                 Address
                             </label>
-                            <div class="col-lg-10">
-                                <textarea name="address" id="address" class="form-control" cols="20" rows="5" placeholder="enter your address">
-                                </textarea>
+                            <div class="col-md-10">
+                                <textarea name="address" id="address" class="form-control" cols="20" rows="5" placeholder="enter your address"></textarea>
                             </div>
                         </div><!--end form group-->
                             <div class="form-group">
-                                <label for="mobile" class="col-lg-2 control-label">
+                                <label for="mobile" class="col-md-2 control-label">
                                     Contact No.
                                 </label>
-                                <div class="col-lg-10">
+                                <div class="col-md-10">
                                     <input type="text"  class="form-contact form-control" maxlength="10"  pattern="[0-9]{10}"name="mobile" id="mobile"   placeholder="Enter your Mobile Number" required>
                                 </div>
                             </div><!--end form group-->
-                             <div class="form-group">
-                            <label for="country" class="col-lg-2 control-label">
+                             <div class="form-group" id="country">
+                          <!--   <label for="country" class="col-md-2 control-label">
                                 Country
                             </label>
-                            <div class="col-lg-10">
-                                <input type="text" class="form-control" name="country" id="country" placeholder="country"  required>
+                            <div class="col-md-10" id="country">
+                                <!--  <input type="text" class="form-control"pattern="[A-Za-z]+" name="country" id="country"  required>-->
                             </div>
-                        </div><!--end form group-->
-                        <div class="form-group">
-                            <label for="state" class="col-lg-2 control-label">
-                                State
-                            </label>
-                            <div class="col-lg-10">
-                                <input type="text" class="form-control" name="state" id="state"  placeholder="state"required>
-                            </div>
-                        </div><!--end form group-->
-                        <div class="form-group">
-                            <label for="city" class="col-lg-2 control-label">
-                                City
-                            </label>
-                            <div class="col-lg-10">
-                                <input type="text" class="form-control" name="city" id="city" placeholder="city"  required>
-                            </div>
-                        </div><!--end form group-->
                          <input type="hidden" name="agencyUserId" value="" />
                         <div class="form-group">
-                            <div class="col-lg-10 col-lg-offset-6">
+                            <div class="col-md-10 col-md-offset-6">
                                 <input type="submit" class="btn  btn-primary" name="submit" value="submit">
                             </div>
                             
                         </div>
+                        
                         </form>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -179,6 +176,7 @@
                 <p>&copy; Copyright @ 2016</p>
             </div>
         </footer>
+        <script src="js/city.js"></script>
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </body>

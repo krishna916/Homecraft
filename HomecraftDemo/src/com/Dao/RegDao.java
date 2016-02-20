@@ -16,7 +16,7 @@ public class RegDao {
 			Connection connection = DbUtil.getCon();
 			PreparedStatement ps = null;
 			
-			String query = "insert into usermaster (fname,lname,email,password,mobile,address,dateofbirth,gender,country,state,city) values (?,?,?,?,?,?,?,?,?,?,?)";
+			String query = "insert into usermaster (fname,lname,email,password,mobile,address,security,secAnswer,dateofbirth,gender,country,state,city) values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
 			ps = connection.prepareStatement(query);
 			ps.setString(1, model.getFname());
 			ps.setString(2, model.getLname());
@@ -24,11 +24,13 @@ public class RegDao {
 			ps.setString(4, model.getPassword());
 			ps.setString(5, model.getMobile());
 			ps.setString(6, model.getAddress());
-			ps.setString(7, model.getDob());
-			ps.setString(8, model.getGender());
-			ps.setString(9, model.getCountry());
-			ps.setString(10, model.getState());
-			ps.setString(11, model.getCity());
+			ps.setString(7, model.getSecurity());
+			ps.setString(8, model.getSecAnswer());
+			ps.setString(9, model.getDob());
+			ps.setString(10, model.getGender());
+			ps.setString(11, model.getCountry());
+			ps.setString(12, model.getState());
+			ps.setString(13, model.getCity());
 			
 			int i = ps.executeUpdate();
 			
@@ -36,25 +38,36 @@ public class RegDao {
 		}
 		
 		public static int agencyRegister(AgencyRegModel model) throws ClassNotFoundException, SQLException {
+			int i=0;
+			Connection connection;
 			
-			Connection connection = DbUtil.getCon();
 			PreparedStatement ps = null;
 			
 			String query ="insert into agencymaster (agencyName,email,password,address,contact,country,state,city) values (?,?,?,?,?,?,?,?)";
-			ps = connection.prepareStatement(query);
-			ps.setString(1,model.getAgencyName());
-			ps.setString(2,model.getEmail());
-			ps.setString(3,model.getPassword());
-			ps.setString(4,model.getAddress());
-			ps.setString(5,model.getMobile());
-			ps.setString(6,model.getCountry());
-			ps.setString(7,model.getState());
-			ps.setString(8,model.getCity());
 			
-			int i = ps.executeUpdate();
-			return i;
+				connection = DbUtil.getCon();
+				ps = connection.prepareStatement(query);
+				ps.setString(1,model.getAgencyName());
+				ps.setString(2,model.getEmail());
+				ps.setString(3,model.getPassword());
+				ps.setString(4,model.getAddress());
+				ps.setString(5,model.getMobile());
+				ps.setString(6,model.getCountry());
+				ps.setString(7,model.getState());
+				ps.setString(8,model.getCity());
+				
+				 i = ps.executeUpdate();
+				 
+					return i;
+			
+				
+				// TODO Auto-generated catch block
+				
+			}
+			
+			
 			
 			
 			
 		}
-}
+

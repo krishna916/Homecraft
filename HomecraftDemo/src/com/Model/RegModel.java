@@ -8,6 +8,8 @@ public class RegModel {
 	private String password;
 	private String mobile;
 	private String address;
+	private String security;
+	private String secAnswer;
 	private String dob;
 	private String gender;
 	private String country;
@@ -55,6 +57,20 @@ public class RegModel {
 	}
 	public void setAddress(String address) {
 		this.address = address;
+	}
+	
+	
+	public String getSecurity() {
+		return security;
+	}
+	public void setSecurity(String security) {
+		this.security = security;
+	}
+	public String getSecAnswer() {
+		return secAnswer;
+	}
+	public void setSecAnswer(String secAnswer) {
+		this.secAnswer = secAnswer;
 	}
 	public String getDob() {
 		return dob;

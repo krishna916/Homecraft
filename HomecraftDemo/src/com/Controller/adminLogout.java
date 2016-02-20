@@ -38,9 +38,9 @@ public class adminLogout extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		HttpSession session =request.getSession();
-		session.invalidate();
-		response.sendRedirect("index.jsp");
+		//HttpSession session =request.getSession();
+	//	session.invalidate();
+		//response.sendRedirect("index.jsp");
 	}
 
 }

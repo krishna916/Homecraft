@@ -62,11 +62,11 @@ public class LoginDao {
 		
 	}		
 		
-		public static int getAdmin(AdminModel model) throws ClassNotFoundException, SQLException {
+		public static AdminModel getAdmin(AdminModel model) throws ClassNotFoundException, SQLException {
 			Connection connection = DbUtil.getCon();
 			PreparedStatement ps =null;
 			ResultSet rs = null ;
-			
+			AdminModel model1 = new AdminModel();
 			String query="select * from adminmaster where email=? and password=?";
 			int i=0;
 			ps = connection.prepareStatement(query);
@@ -77,9 +77,9 @@ public class LoginDao {
 			
 			while(rs.next())
 			{
-				i=1;
+				model1.setFname(rs.getString("name"));
 			}
-			return i;
+			return model1;
 			
 			
 		}

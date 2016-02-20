@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Agency Login</title>
+<link rel="icon" type="image/x-icon" href="ico/favicon.ico">
 	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 
 	<!-- Optional theme -->
@@ -62,23 +63,23 @@
                     <div class="col-md-8">
                         <form action="AgencyLoginController" class="form-horizontal" role="form" method="post" data-toggle="validator">
                             <div class="form-group">
-                                <label for="email" class="col-lg-2 control-label">
+                                <label for="email" class="col-md-2 control-label">
                                     Email
                                 </label>
-                                <div class="col-lg-10">
+                                <div class="col-md-10">
                                     <input type="text" class="form-control" name="email" id="email" placeholder="Enter your email" required>
                                 </div>
                             </div><!--end form group-->
                             <div class="form-group">
-                                <label for="password" class="col-lg-2 control-label">
+                                <label for="password" class="col-md-2 control-label">
                                     password
                                 </label>
-                                <div class="col-lg-10">
+                                <div class="col-md-10">
                                     <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password" required>
                                 </div>
                             </div><!--end form group-->
                              <div class="form-group">
-                            <div class="col-lg-10 col-lg-offset-5">
+                            <div class="col-md-10 col-md-offset-5">
                                 <input type="submit" class="btn btn-lg btn-primary" name="login" value="Login">
                             </div>
                             

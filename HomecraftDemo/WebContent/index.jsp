@@ -1,312 +1,336 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%
-	session = request.getSession();
-	session.invalidate();
-%>
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+       <meta charset="utf-8">
+        <title>Homecraft</title>
+                <link rel="icon" type="image/x-icon" href="ico/favicon.ico">
+        
+        <!-- Required css files-->
+         
+         <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+         <link rel="stylesheet" href="css/homepage-css.css" type="text/css">
+         <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
 
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>HomeCraft-HomePage</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-
-    <!-- Custom Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
-
-    <!-- Plugin CSS -->
-    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/creative.css" type="text/css">
-    <link href="css/custom.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <script src="js/html5shiv.min.js"></script>
-    <script src="js/respond.min.js"></script>
-</head>
-
-<body id="page-top">
-
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="index.html" style="color:red">HOMECRAFT</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                   
-                    <li>
-                        <a class="page-scroll" href="userLogin.jsp" style="color:red">Login</a>
-                    </li>
-
-                    <li>
-                        <a class="page-scroll" href="userRegistration.jsp" style="color:red">Register</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact" style="color:red">Contact Us</a>
-                    </li>
-                     
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
-
-    <header>
-        <div class="header-content">
-            <div class="header-content-inner">
-                <h1 style="color:black">All Your Home Services Solutions At One Place</h1>
-                <hr>
-                <p style="color:black; font-weight:bold">Now book Home Services From Home. Just Few Clicks away </p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
-            </div>
-        </div>
-    </header>
-<!--
-    <section class="bg-primary" id="about">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css" type="text/css">
+        
+        <!-- optional Reguired js files-->
+        <script src="js/html5shiv.min.js"></script>
+	    <script src="js/respond.min.js"></script>
+        
+    </head>
+    <body>
+       <div id="wrapper">
+           <!--navbar-->
+               
+                 <nav class="navbar navbar-default navbar-fixed-top"  role="navigation" id="my-navbar" >
+                     <div class="container" id="home-top">
+                        <div class="navbar-header page-scroll">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a href="#" class="navbar-brand page-scroll">HomeCraft</a>
+                        </div><!-- Navbar Header-->
+                         <div class="collapse navbar-collapse" id="navbar-collapse">
+                                <a href="agencyRegistration.jsp" class="btn btn-warning navbar-btn navbar-right">Join Us</a>
+                             <ul class="nav navbar-nav navbar-left">
+                                <li><a href="userLogin.jsp" >Login</a></li>
+                                <li><a href="userRegistration.jsp" >Register</a></li>
+                                <li><a href="" >About Us</a></li>
+                                <li><a href="" >Services</a></li>
+                                <li><a href="#contactUs" class="page-scroll">Contact Us</a></li>
+                                
+                             </ul>
+                             
+                         </div>
+                     </div>
+                </nav>
+           
+           <!--navbar end -->
+           
+           <!--carousel-->
+           <div class="" id="header-carousel">
+               <div class="carousel slide" id="screenshot-carousel" data-ride="carousel" data-interval="4000" >
+						<ol class="carousel-indicators">
+							 <li data-target="#screenshot-carousel" data-slide-to="0" class="active"></li>
+							 <li data-target="#screenshot-carousel" data-slide-to="1"></li>
+							 <li data-target="#screenshot-carousel" data-slide-to="2"></li>
+							 <li data-target="#screenshot-carousel" data-slide-to="3"></li>
+							 <li data-target="#screenshot-carousel" data-slide-to="4"></li>
+						</ol>
+						<div class="carousel-inner">
+							<div class="item active">
+								<img src="img/header/header2.jpg"  alt="Text of the image">
+                                <div class="carousel-caption">
+                                   
+                                </div>
+							</div>
+                            <div class="item">
+								<img src="img/header/header3.jpg" alt="Text of the image">
+                                <div class="carousel-caption">
+                                    
+                                </div>
+							</div>
+                            <div class="item">
+								<img src="img/header/header4.jpg" alt="Text of the image">
+                                <div class="carousel-caption">
+                                    
+                                </div>
+							</div>
+                            <div class="item">
+								<img src="img/header/header5.jpg" alt="Text of the image">
+                                <div class="carousel-caption">
+                                    
+                                </div>
+							</div>
+							<div class="item">
+								<img src="img/header/header7.jpg" alt="Text of the image">
+                                <div class="carousel-caption">
+                                    
+                                </div>
+							</div>
+						</div><!--end carousel inner-->
+                        <a href="#screenshot-carousel" class="left carousel-control" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                         <a href="#screenshot-carousel" class="right carousel-control" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+					</div>
+              </div><!-- end carousel-->
+         
+           <section id="services">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">We've got what you need!</h2>
-                    <hr class="light">
-                    <p class="text-faded">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
-                    <a href="#" class="btn btn-default btn-xl">Get Started!</a>
-                </div>
-            </div>
-        </div>
-    </section>-->
-
-    <section id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">At Your Service</h2>
+                <div class="col-md-12 text-center">
+                    <h2 class="section-heading">How It Works..</h2>
                     <hr class="primary">
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6 text-center">
+                <div class="col-md-4 col-md-8 text-center">
                     <div class="service-box">
-                        <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
-                        <h3>Sturdy Templates</h3>
-                        <p class="text-muted">Our templates are updated regularly so they don't break.</p>
+                        <i class="fa fa-4x fa-shopping-cart wow bounceIn text-primary"></i>
+                        <h3>Pick The Service</h3>
+                        <p class="text-muted">Pick The Services you want and you will be serviced.</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 text-center">
+                <div class="col-md-4 col-md-8 text-center">
                     <div class="service-box">
-                        <i class="fa fa-4x fa-paper-plane wow bounceIn text-primary" data-wow-delay=".1s"></i>
-                        <h3>Ready to Ship</h3>
-                        <p class="text-muted">You can use this theme as is, or you can make changes!</p>
+                        <i class="fa fa-4x fa-phone wow bounceIn text-primary" data-wow-delay=".1s"></i>
+                        <h3>Contact</h3>
+                        <p class="text-muted">Contact A Agency by Booking a Service</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 text-center">
+                <div class="col-md-4 col-md-8 text-center">
                     <div class="service-box">
-                        <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary" data-wow-delay=".2s"></i>
-                        <h3>Up to Date</h3>
-                        <p class="text-muted">We update dependencies to keep things fresh.</p>
+                        <i class="fa fa-4x fa-credit-card wow bounceIn text-primary" data-wow-delay=".2s"></i>
+                        <h3>Pay</h3>
+                        <p class="text-muted">After The Service is Provided.</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-heart wow bounceIn text-primary" data-wow-delay=".3s"></i>
-                        <h3>Made with Love</h3>
-                        <p class="text-muted">You have to make your websites with love these days!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="no-padding" id="portfolio">
-        <div class="container-fluid">
-            <div class="row no-gutter">
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/electric.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                  Category  
-                                </div>
-                                <div class="project-name">
-                                    Electric Works
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/carpentry.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Carpentry
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/plumbing.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Plumbing
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/paints.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    House Painting
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/PestControl.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Pest Control
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/packers.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Packers and Movers
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-   <!--- <aside class="bg-dark">
-        <div class="container text-center">
-            <div class="call-to-action">
-                <h2>Free Download at Start Bootstrap!</h2>
-                <a href="#" class="btn btn-default btn-xl wow tada">Download Now!</a>
-            </div>
-        </div>
-    </aside>-->
-
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Let's Get In Touch!</h2>
-                    <hr class="primary">
-                    <p>Want to book a services with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
-                </div>
-                <div class="col-lg-3  text-center">
-                    <i class="fa fa-phone fa-3x wow bounceIn"></i>
-                    <p>123-456-6789</p>
-                </div>
-                <div class="col-lg-3 text-center">
-                    <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                    <p><a href="mailto:your-email@your-domain.com">contactus@homecraft.com</a></p>
-                </div>
-                <div class="col-lg-3 text-center">
-                	<i class="fa fa-check-square-o fa-3x"></i>
-                	<p><a href="agencyRegistration.jsp" class="">Register As Agency</a></p>
-                </div>
-                <div class="col-lg-3 text-center">
-                	<i class="fa fa-check-square-o fa-3x"></i>
-                	<p><a href="agencyLogin.jsp" class="">Login As Agency</a></p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <footer>
-            <div class="container text-center" id="contactUs">
-                <hr>
-                <ul class="list-inline">
-                    <li><a href="">twitter</a></li>
-                    <li><a href="">Facebook</a></li>
-                    <li><a href="">Youtube</a></li>
-                </ul>
                 
-                <p>&copy; Copyright @ 2016</p>
             </div>
-        </footer>
+        </div>
+    </section> 
+    
+    <!-- Feedback -->
+    <div class="container">
+			<section>
+				<div class="page-header" id="feedback">
+					<h2>Feedback.<small>Checkout this awesome feedback</small></h2>
+				</div>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+				<div class="row">
+					<div class="col-md-4">
+						<blockquote>
+							<p>
+								Sed et ipsum id ligula vulputate viverra sit amet sed velit. Sed quis feugiat risus.
+								Maecenas fermentum, enim condimentum luctus eleifend, velit nibh tincidunt orci,
+							  </p>
+							<footer>John Doe</footer>
+						</blockquote>
+					</div>
+					<div class="col-md-4">
+						<blockquote>
+							<p>
+								Sed et ipsum id ligula vulputate viverra sit amet sed velit. Sed quis feugiat risus.
+								Maecenas fermentum, enim condimentum luctus eleifend, velit nibh tincidunt orci,
+							  </p>
+							<footer>John Doe</footer>
+						</blockquote>
+					</div>
+					<div class="col-md-4">
+						<blockquote>
+							<p>
+								Sed et ipsum id ligula vulputate viverra sit amet sed velit. Sed quis feugiat risus.
+								Maecenas fermentum, enim condimentum luctus eleifend, velit nibh tincidunt orci,
+							  </p>
+							<footer>John Doe</footer>
+						</blockquote>
+					</div>
+				</div>
+			</section>
+		</div>
+		<!--end Container-->
+    
+           
+        <!--Contact Us-->
+    <div class="container">
+        <section>
+            <div class="page-header" id="contactUs">
+                <h2>Contact Us.<small>Contact us for more</small></h2>
+            </div><!--end page header-->
+            <div class="row">
+                <div class="col-md-4">
+                    <p>Send us a message, or contact us from the address below</p>
+                    
+                    <address>
+                        <strong>Homecraft Pvt Ltd</strong><br>
+                        Lorem ipsum dolor sit amet,<br>
+                        consectetur adipiscing elit.<br>
+                        Etiam ac convallis magna. <br>
+                        1234567890
+                    </address>
+                </div>
+                <div class="col-md-8">
+                	<div class="row">
+                    <form action="" class="form-horizontal">
+                        <div class="form-group">
+                            <label for="user-name" class="col-md-2 control-label">
+                                Name
+                            </label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="user-name" placeholder="Enter your Name">
+                            </div>
+                        </div><!--end form group-->
+                         <div class="form-group">
+                            <label for="user-email" class="col-md-2 control-label">
+                                Email
+                            </label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="user-email" placeholder="Enter your email">
+                            </div>
+                        </div><!--end form group-->
+                        <div class="form-group">
+                            <label for="user-url" class="col-md-2 control-label">
+                                Your Website
+                            </label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="user-url" placeholder="Enter your website">
+                            </div>
+                        </div><!--end form group-->
+                        <div class="form-group">
+                            <label for="user-msg" class="col-md-2 control-label">
+                                Any Message
+                            </label>
+                            <div class="col-md-10">
+                                <textarea name="user-msg" id="user-msg" class="form-control" cols="20" rows="10" placeholder="enter your message">
+                                </textarea>
+                            </div>
+                        </div><!--end form group-->
+                        
+                        <div class="form-group">
+                            <div class="col-md-10 col-md-offset-2">
+                                <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+                            </div>
+                        </div>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+              
+    <!--banner-->
+         <div class="banner" >
 
-    <!-- Plugin JavaScript -->
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/jquery.fittext.js"></script>
-    <script src="js/wow.min.js"></script>
+        <div class="container" >
 
-    <!-- Custom Theme JavaScript -->
-    <script src="js/creative.js"></script>
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Connect to HomeCraft:</h2>
+                </div>
+                <div class="col-md-6">
+                    <ul class="list-inline banner-social-buttons" id="banner" style="margin-top:2px;">
+                        <li>
+                            <a href="#" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google Plus</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-</body>
+        </div>
+        <!-- /.container -->
 
+    </div>
+    <!-- /.banner -->
+           
+           
+           
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-inline">
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#about">About</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#services">Services</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#contact">Contact</a>
+                        </li>
+                         <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="agencyLogin.jsp">Agency Login</a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted small">Copyright &copy; Your Company 2016. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+        
+        
+        <!-- Required js files-->
+        
+           
+        <!--Scrolling Nav Js-->
+       
+        <script src="js/wow.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        
+        <script src="js/jquery-2.1.4.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+         <script src="js/jquery.easing.min.js"></script>
+        <script src="js/scrolling-nav.js"></script>
+        <script src="js/jquery.fittext.js"></script>
+           <script src="js/creative.js"></script>
+           
+        
+    </body>
+    
 </html>

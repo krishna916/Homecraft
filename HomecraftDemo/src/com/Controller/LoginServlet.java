@@ -15,6 +15,8 @@ import com.Dao.LoginDao;
 
 import com.Model.RegModel;
 
+import methods.Hashing;
+
 
 /**
  * Servlet implementation class LoginServlet
@@ -50,28 +52,31 @@ public class LoginServlet extends HttpServlet {
 			HttpSession session = null;
 			String email = request.getParameter("email");
 			String password = request.getParameter("password");
-			
+			String ePassword = Hashing.encrypt(password);
 			RegModel model = new RegModel();
 			model.setEmail(email);
-			model.setPassword(password);
-			int i=0;
+			model.setPassword(ePassword);
+		
 			
 			try {
 				RegModel model1 = LoginDao.getUser(model);
 				
-				if(!(model1.getFname().isEmpty()))
+				if(model1.getFname()!=null)
 				 {
+					
 					String fname = model1.getFname();
 					 session = request.getSession();
 					 session.setAttribute("userEmail",fname);
 					 request.setAttribute("fname",fname);
-					 response.sendRedirect("userdashboard.jsp");
+					 //response.sendRedirect("userdashboard.jsp");
+					 request.getRequestDispatcher("userdashboard.jsp").forward(request, response);
 					 
 				 }
 				else
-				 {
-					 response.sendRedirect("userLoginError.jsp");
-				 }
+				{
+					response.sendRedirect("userLoginError.jsp");
+				}
+				
 			} catch (ClassNotFoundException | SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

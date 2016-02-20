@@ -68,7 +68,7 @@
                                 <label for="email" class="col-lg-2 control-label">
                                     Email
                                 </label>
-                                <div class="col-lg-10">
+                                <div class="col-md-10">
                                     <input type="text" class="form-control" name="email" id="email" placeholder="Enter your email" required>
                                 </div>
                             </div><!--end form group-->
@@ -76,12 +76,12 @@
                                 <label for="password" class="col-lg-2 control-label">
                                     password
                                 </label>
-                                <div class="col-lg-10">
+                                <div class="col-md-10">
                                     <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password" required>
                                 </div>
                             </div><!--end form group-->
                              <div class="form-group">
-                            <div class="col-lg-10 col-lg-offset-5">
+                            <div class="col-md-10 col-lg-offset-5">
                                 <input type="submit" class="btn btn-lg btn-primary" name="login" value="Login">
                             </div>
                             

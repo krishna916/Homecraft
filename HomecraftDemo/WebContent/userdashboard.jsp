@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title></title>
+<title><%out.println((String)session.getAttribute("userEmail")); %></title>
 
 <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -29,7 +29,7 @@
                                 <span class="icon-bar"></span>
                             </button>
 				            <a href="" id="brand" class="navbar-brand">HomeCraft</a>
-                        </div><!-- Navbar Header-->
+                        </div><!--nav bar Header-->
                         <div class="collapse navbar-collapse" id="navbar-collapse">
                             <ul class="nav navbar-nav navbar-left">
                                 <li><a href="#menu-toggle"  class="btn" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger"></span></a></li>
@@ -59,10 +59,10 @@
                              </ul>
                         </div>
                     </div>
-                </nav><!-- Navbar end-->
+                </nav><!-- Nav bar end-->
             </div>
             
-             <!--Sidebar-->
+             <!--Side bar-->
         <div id="sidebar-wrapper" class="sidebar" style="background-color: #222;">
              <ul class="sidebar-nav ">
                 
@@ -89,7 +89,7 @@
                 </li>
             </ul>
         </div>
-        <!--Sidebar end-->
+        <!--Side bar end-->
         <div id="page-content-wrapper">
             <div class="container-fluid">
 
