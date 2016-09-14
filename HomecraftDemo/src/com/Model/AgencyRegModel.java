@@ -1,6 +1,7 @@
 package com.Model;
 
 public class AgencyRegModel {
+	private int agencyId;
 	private String agencyName;
 	private String email;
 	private String password;
@@ -9,6 +10,14 @@ public class AgencyRegModel {
 	private String country;
 	private String state;
 	private String city;
+	
+	
+	public int getAgencyId() {
+		return agencyId;
+	}
+	public void setAgencyId(int agencyId) {
+		this.agencyId = agencyId;
+	}
 	public String getAgencyName() {
 		return agencyName;
 	}

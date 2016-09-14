@@ -6,13 +6,7 @@
     <meta charset="UTF-8">
     <title>Login Form</title>
     
-    <% 
-	String name=(String)session.getAttribute("name");
-	if(name!= null)
-	{
-		request.getRequestDispatcher("adminPanel.jsp").forward(request, response);
-	}
-%>
+ 
     
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
         <link rel="stylesheet" href="css/Login.css">

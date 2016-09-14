@@ -59,7 +59,7 @@ public class RegController extends HttpServlet {
 			String gender = request.getParameter("gender");
 			String country = request.getParameter("country");
 			String state = request.getParameter("state");
-			String city = request.getParameter("city");
+			String city = request.getParameter("cities");
 			
 			HttpSession session = null;
 			String ePassword = Hashing.encrypt(password);

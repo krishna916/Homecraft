@@ -96,7 +96,7 @@
                                 <label for="agencyName" class="col-md-2 control-label">Agency Name
                                 </label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" pattern="[A-Za-z]+" name="agencyName" id="agencyName" placeholder="Enter your Agency Name" required>
+                                    <input type="text" class="form-control" pattern="[A-Za-z\s]+" name="agencyName" id="agencyName" placeholder="Enter your Agency Name" required>
                                 </div>
                             </div><!--end form group-->
                             <div class="form-group">

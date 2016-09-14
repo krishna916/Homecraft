@@ -32,6 +32,7 @@ public class LoginDao {
 		
 		while(rs.next())
 		{
+			model1.setUserId(rs.getString("userid"));
 			model1.setFname(rs.getString("fname"));
 			model1.setLname(rs.getString("lname"));
 			i=1;
@@ -40,13 +41,13 @@ public class LoginDao {
 		return model1;
 	}
 	
-		public static int getAgency(AgencyRegModel model) throws ClassNotFoundException, SQLException {
+		public static AgencyRegModel getAgency(AgencyRegModel model) throws ClassNotFoundException, SQLException {
 			Connection connection = DbUtil.getCon();
 			PreparedStatement ps = null;
 			ResultSet rs =  null;
-			
+			AgencyRegModel model2 = new AgencyRegModel();
 			String query="select * from agencymaster where email=? and password=?";
-			int i=0;
+			//int i=0;
 			ps = connection.prepareStatement(query);
 			ps.setString(1,model.getEmail());
 			ps.setString(2,model.getPassword());
@@ -55,10 +56,12 @@ public class LoginDao {
 			
 			while(rs.next())
 			{
-				i=1;
+				model2.setAgencyId(rs.getInt("agencyId"));
+				model2.setAgencyName(rs.getString("agencyName"));
+				model2.setEmail(rs.getString("email"));
 			}
-			return i;
 			
+			return model2;
 		
 	}		
 		

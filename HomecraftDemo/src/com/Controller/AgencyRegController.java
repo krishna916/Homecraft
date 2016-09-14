@@ -56,7 +56,7 @@ public class AgencyRegController extends HttpServlet {
 			String mobile = request.getParameter("mobile");
 			String country = request.getParameter("country");
 			String state = request.getParameter("state");
-			String city = request.getParameter("city");
+			String city = request.getParameter("cities");
 			//HttpSession session = null;
 			
 			String ePassword = Hashing.encrypt(password);

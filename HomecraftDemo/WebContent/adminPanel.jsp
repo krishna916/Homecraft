@@ -10,9 +10,12 @@ String user=(String)session.getAttribute("name");
 	String admin=(String)session.getAttribute("admin");
 	if(admin != "admin")
 	{
-		response.sendRedirect("index.jsp");
+		response.sendRedirect("adminLogin.jsp");
 	}
 %>
+
+
+
 <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
@@ -119,12 +122,12 @@ String user=(String)session.getAttribute("name");
                                         <i class="fa fa-comments fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">26</div>
-                                        <div>New Comments!</div>
+                                        <div class="huge">${serviceRequests}</div>
+                                        <div>Service Requests</div>
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="AdminServiceRequests">
                                 <div class="panel-footer">
                                     <span class="pull-left">View Details</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -141,12 +144,12 @@ String user=(String)session.getAttribute("name");
                                         <i class="fa fa-tasks fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">12</div>
-                                        <div>New Tasks!</div>
+                                        <div class="huge">${agencies}</div>
+                                        <div>Agencies</div>
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="AdminGetAgencies">
                                 <div class="panel-footer">
                                     <span class="pull-left">View Details</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -163,12 +166,12 @@ String user=(String)session.getAttribute("name");
                                         <i class="fa fa-shopping-cart fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">124</div>
-                                        <div>New Orders!</div>
+                                        <div class="huge">${newRequests}</div>
+                                        <div>New Requests</div>
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="ViewNewRequests">
                                 <div class="panel-footer">
                                     <span class="pull-left">View Details</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -185,12 +188,12 @@ String user=(String)session.getAttribute("name");
                                         <i class="fa fa-user fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">13</div>
+                                        <div class="huge">${users}</div>
                                         <div>Users!</div>
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="GetUsersAdmin">
                                 <div class="panel-footer">
                                     <span class="pull-left">View Details</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

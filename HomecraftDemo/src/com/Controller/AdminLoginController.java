@@ -3,6 +3,7 @@ package com.Controller;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.Dao.LoginDao;
+import com.Dao.admin.HomePageInfo;
 import com.Model.AdminModel;
 
 /**
@@ -59,15 +61,18 @@ public class AdminLoginController extends HttpServlet {
 				System.out.println(i);
 				if(!(model1.getFname().isEmpty()))
 				 {
+					//System.out.println("he");
 					String name = model1.getFname();
+					//System.out.println(name);
 					String admin = "admin";
 					 session = request.getSession();
 					 //session.setAttribute("userEmail",email);
 					 session.setAttribute("name", name);
 					 session.setAttribute("admin", admin);
-					 //response.sendRedirect("admindashboard.jsp");
-					 request.getRequestDispatcher("adminPanel.jsp").forward(request, response);;
+					 ////response.sendRedirect("admindashboard.jsp");
 					 
+					 
+					 request.getRequestDispatcher("AdminHomepage").forward(request, response);;
 				 }
 				else
 				 {

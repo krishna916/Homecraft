@@ -67,7 +67,9 @@ public class LoginServlet extends HttpServlet {
 					String fname = model1.getFname();
 					 session = request.getSession();
 					 session.setAttribute("userEmail",fname);
-					 request.setAttribute("fname",fname);
+					 String userId = model1.getUserId();
+					 System.out.println(userId);
+					 session.setAttribute("userId",userId);
 					 //response.sendRedirect("userdashboard.jsp");
 					 request.getRequestDispatcher("userdashboard.jsp").forward(request, response);
 					 

@@ -54,16 +54,20 @@ public class AgencyLoginController extends HttpServlet {
 			model.setPassword(ePassword);
 			
 			int i=0;
-			
+			AgencyRegModel model2 = new AgencyRegModel();
 			try {
-				i = LoginDao.getAgency(model);
-				
+				model2 = LoginDao.getAgency(model);
+				String checkEmail = model2.getEmail();
+				System.out.println(checkEmail);
 				System.out.println(i);
-				if(i==1)
+				//if(!model2.getAgencyName().isEmpty() && model2.getAgencyName()!=null)
+				if(checkEmail.equalsIgnoreCase(email))
 				 {
+					
 					 session = request.getSession();
-					 session.setAttribute("userEmail",email);
-					 response.sendRedirect("userdashboard.jsp");
+					 session.setAttribute("agencyId", model2.getAgencyId());
+					 session.setAttribute("agencyName",model2.getAgencyName());
+					 request.getRequestDispatcher("agencydashboard.jsp").forward(request, response);
 					 
 				 }
 				else

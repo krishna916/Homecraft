@@ -51,7 +51,7 @@
                                 <li class="dropdown">
                                     <button type="button" class="btn btn-primary navbar-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <span class="
-                                            glyphicon glyphicon-user"></span>&nbsp;User <span class="caret"></span>
+                                            glyphicon glyphicon-user"></span>&nbsp;<% out.print((String)session.getAttribute("agencyName")); %> <span class="caret"></span>
                                       </button>
                                     <ul class="dropdown-menu">
                                         <li>
@@ -87,10 +87,10 @@
                     <a href="AddServices.jsp" class="">Add Services</a>
                 </li>
                 <li>
-                    <a href="agencyServiceRequests.html">Service Requests</a>
+                    <a href="ViewServiceRequests">Service Requests</a>
                 </li>
                 <li>
-                    <a href="#">Overview</a>
+                    <a href="AgencyServiceStatus">Service Status</a>
                 </li>
                 <li>
                     <a href="#">Events</a>
@@ -107,6 +107,36 @@
             </ul>
         </div>
         <!--Sidebar end-->
+        
+        <!-- Main Page Content -->
+        <div id="page-content-wrapper">
+        <div class="container">
+        	 <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Add Services
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li class="">
+                                <a href="agencydashboard.jsp">Dashboard</a>
+                            </li>
+                            <li class="active"><a href="AddServices.html">Add Services</a></li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- /.row -->
+        	<% 
+        		String addService = (String)request.getAttribute("addService");
+        		if(addService=="success"){
+        	
+        	%>
+        		<div class="alert alert-success">
+            	<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            		<strong>Service Added Successfully</strong>
+            	</div>
+        	<%} %>
+        </div>
     
      <!--footer-->
         <footer>
@@ -120,7 +150,9 @@
                 
                 <p>&copy; Copyright @ 2016</p>
             </div>
+            
         </footer>
+        </div>
     <!-- jQuery -->
     <script src="js/jquery-2.1.4.min.js"></script>
 
